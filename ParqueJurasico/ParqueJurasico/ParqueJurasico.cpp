@@ -254,6 +254,7 @@ int main()
 	Model brazoDer("resources/objects/Personaje/brazoder.obj");
 	Model brazoIzq("resources/objects/Personaje/brazoizq.obj");
 	Model cabeza("resources/objects/Personaje/cabeza.obj");
+	Model edificio1("resources/objects/Edificio1/Edificio1.obj");
 
 	//Inicialización de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -362,6 +363,13 @@ int main()
 		staticShader.setMat4("model", model);
 		piso.Draw(staticShader);
 
+		// Primer Edificación: Edificio 1
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-310.0f, 0.0f, 435.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.05f));
+		staticShader.setMat4("model", model);
+		edificio1.Draw(staticShader);
+
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
 		// -------------------------------------------------------------------------------------------------------------------------
@@ -418,9 +426,6 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 2.5f, 0));
 		staticShader.setMat4("model", model);
 		cabeza.Draw(staticShader);
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Primera Edificación 
-		// -------------------------------------------------------------------------------------------------------------------------
 
 		//-------------------------------------------------------------------------------------
 		// draw skybox as last
