@@ -258,6 +258,7 @@ int main()
 	Model edificio2("resources/objects/Edificio2/Edificio2.obj");
 	Model edificio3("resources/objects/Edificio3/Edificio3.obj");
 	Model restaurante("resources/objects/Restaurante/Restaurante.obj");
+	Model fuente("resources/objects/Fuente/Fuente.obj");
 
 	//Inicialización de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -367,14 +368,14 @@ int main()
 		piso.Draw(staticShader);
 
 		// Primer Edificación: Hotel 1
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-350.0f, 0.0f, -435.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-660.0f, 0.0f, -780.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.05f));
 		staticShader.setMat4("model", model);
 		edificio1.Draw(staticShader);
 
 		// Segunda Edificación: Hotel 2
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(400.0f, 97.0f, 400.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(660.0f, 97.0f, 780.0f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.5f));
 		staticShader.setMat4("model", model);
@@ -386,12 +387,25 @@ int main()
 		staticShader.setMat4("model", model);
 		edificio3.Draw(staticShader);
 
-		// Cuearta Edificación: Restaurante
+		// Cuarta Edificación: Restaurante
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-660.0f, 0.0f, 780.0f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(25.0f));
 		staticShader.setMat4("model", model);
 		restaurante.Draw(staticShader);
+
+		// Elemento Extra: Fuente
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(600.0f, 0.0f, 850.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(30.0f));
+		staticShader.setMat4("model", model);
+		fuente.Draw(staticShader);
+
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(1100.0f, 0.0f, 350.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(30.0f));
+		staticShader.setMat4("model", model);
+		fuente.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
