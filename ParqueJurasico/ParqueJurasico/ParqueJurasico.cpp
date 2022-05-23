@@ -257,6 +257,7 @@ int main()
 	Model edificio1("resources/objects/Edificio1/Edificio1.obj");
 	Model edificio2("resources/objects/Edificio2/Edificio2.obj");
 	Model edificio3("resources/objects/Edificio3/Edificio3.obj");
+	Model restaurante("resources/objects/Restaurante/Restaurante.obj");
 
 	//Inicialización de KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -333,7 +334,7 @@ int main()
 
 
 		// -------------------------------------------------------------------------------------------------------------------------
-		// Peimera Animacion
+		// Primera Animacion
 		// -------------------------------------------------------------------------------------------------------------------------
 		//Remember to activate the shader with the animation
 		animShader.use();
@@ -361,7 +362,7 @@ int main()
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::scale(model, glm::vec3(0.4f));
 		staticShader.setMat4("model", model);
 		piso.Draw(staticShader);
 
@@ -384,6 +385,13 @@ int main()
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		edificio3.Draw(staticShader);
+
+		// Cuearta Edificación: Restaurante
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-700.0f, 0.0f, 750.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(20.0f));
+		staticShader.setMat4("model", model);
+		restaurante.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
