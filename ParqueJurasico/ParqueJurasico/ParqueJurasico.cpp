@@ -256,8 +256,8 @@ int main()
 	Model cabeza("resources/objects/Personaje/cabeza.obj");
 	Model edificio1("resources/objects/Edificio1/Edificio1.obj");
 	Model edificio2("resources/objects/Edificio2/Edificio2.obj");
-	Model edificio3("resources/objects/Edificio3/Edificio3.obj");
 	Model restaurante("resources/objects/Restaurante/Restaurante.obj");
+	Model restaurante2("resources/objects/Restaurante2/Restaurante2.obj");
 	Model fuente("resources/objects/Fuente/Fuente.obj");
 
 	//Inicialización de KeyFrames
@@ -381,11 +381,12 @@ int main()
 		staticShader.setMat4("model", model);
 		edificio2.Draw(staticShader);
 
-		// Tercera Edificación: Tienda 1
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(350.0f, 0.0f, -450.0f));
-		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		// Tercera Edificación: Restaurante 2
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(300.0f, 0.0f, -850.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(10.0f));
 		staticShader.setMat4("model", model);
-		edificio3.Draw(staticShader);
+		restaurante2.Draw(staticShader);
 
 		// Cuarta Edificación: Restaurante
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-660.0f, 0.0f, 780.0f));
