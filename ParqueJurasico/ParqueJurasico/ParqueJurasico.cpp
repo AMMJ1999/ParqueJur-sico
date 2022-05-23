@@ -387,9 +387,9 @@ int main()
 		edificio3.Draw(staticShader);
 
 		// Cuearta Edificación: Restaurante
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-700.0f, 0.0f, 750.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-660.0f, 0.0f, 780.0f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(20.0f));
+		model = glm::scale(model, glm::vec3(25.0f));
 		staticShader.setMat4("model", model);
 		restaurante.Draw(staticShader);
 
